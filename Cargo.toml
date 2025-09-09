@@ -4,3 +4,23 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+axum = {version = "0.8", features = ["macros"]}
+sqlx = {version = "0.8", features = ["runtime-tokio-native-tls", "postgres", "macros", "chrono", "uuid", "json"]}
+tokio = {version = "1.47.1", features = ["full", "rt-multi-thread"]}
+tower-http = {version = "0.6.6", features = ["trace"]}
+tracing = "0.1.41"
+tracing-subscriber = {version = "0.3.19", features = ["env-filter"]}
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0"
+dotenvy = "0.15"
+uuid = {version = "1.13", features = ["v4", "serde" ]}
+chrono = {version = "0.4", features = ["serde"]}
+anyhow = "1.0"
+thiserror = "1.0"
+utoipa = { version = "5", features = ["axum_extras", "chrono", "uuid"] }
+validator = {version = "0.16", features = ["derive"]}
+
+[dev-dependencies]
+tokio-test = "0.4"
+sqlx = { version = "0.8", features = ["runtime-tokio-native-tls", "postgres", "macros", "chrono", "uuid", "json", "migrate"] }
+serial_test = "2"
